@@ -7,14 +7,15 @@ cursor = connection.cursor()
 # print(cursor)
 
 cursor.executescript('''
-    DROP TABLE water_consuming;
-    CREATE TABLE IF NOT EXISTS consuming(
+        CREATE TABLE IF NOT EXISTS consuming(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         type TEXT NOT NULL,
         month TEXT NOT NULL,
         value INTEGER NOT NULL
     )                   
 ''')
+
+# "type" can be: water or energy
 
 connection.commit()
 connection.close()
